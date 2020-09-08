@@ -10,12 +10,14 @@ typedef uint8_t u8;
 typedef uint64_t u64;
 
 
+// Prefer signed types for external interfaces for easier Android interoperability
+
 #define OUTPUT_MAX_LEN 128 // 1024
 struct BytesResult {
     //u8 bytes[OUTPUT_MAX_LEN];
     const u8* bytes;
     s64 length;
-    u64 error;
+    s64 error;
 };
 
 #endif // TYPES_H
