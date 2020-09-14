@@ -8,12 +8,15 @@
 
 #include "types.h"
 
+
 inline u64 strlen(const char* s) {
-    char c;
-    u64 i = 0;
-    do {
-        c = s[i++];
-    } while (c != 0);
-        
-    return i;
+    u64 len = 0;
+    for (; s[len]; len++);
+
+    return len;
+}
+
+// Does not include space.
+inline bool isViewableAscii(u8 c) {
+    return (c >= 0x21 && c <= 0x7e);
 }
